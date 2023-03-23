@@ -79,6 +79,9 @@ const Header = () => {
 					/>
 				</div>
 				<button
+					onClick={() => {
+						searchQueryHandler('searchButton');
+					}}
 					className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]
             ">
 					<IoIosSearch className="text-white text-xl" />
@@ -92,13 +95,13 @@ const Header = () => {
 					<div className="flex items-center justify-center ml-2 h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
 						<FiBell className="text-white text-xl cursor-pointer" />
 					</div>
-					<div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-						<img
-							src={
-								'https://xsgames.co/randomusers/avatar.php?g=pixel'
-							}
-						/>
-					</div>
+				</div>
+				<div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
+					<img
+						src={
+							'https://xsgames.co/randomusers/avatar.php?g=pixel'
+						}
+					/>
 				</div>
 			</div>
 		</div>

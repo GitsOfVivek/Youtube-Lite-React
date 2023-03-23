@@ -5,15 +5,15 @@ export const Context = createContext();
 
 export const AppContext = props => {
 	const [loading, setLoading] = useState(false);
-	const [searchResults, setSearchResults] = useState(false);
-	const [selectCotegories, setSelectCotegories] = useState('New');
+	const [searchResults, setSearchResults] = useState(null);
+	const [selectCategories, setSelectCategories] = useState('New');
 	const [mobileMenu, setMobileMenu] = useState(false);
 
 	useEffect(() => {
-		fetchSelectedCotegoriesData(selectCotegories);
-	}, [selectCotegories]);
+		fetchSelectedCategoriesData(selectCategories);
+	}, [selectCategories]);
 
-	const fetchSelectedCotegoriesData = query => {
+	const fetchSelectedCategoriesData = query => {
 		setLoading(true);
 		fetchDataFromApi(`search/?q=${query}`).then(({ contents }) => {
 			console.log(contents);
@@ -31,6 +31,8 @@ export const AppContext = props => {
 				setSearchResults,
 				mobileMenu,
 				setMobileMenu,
+				selectCategories,
+				setSelectCategories,
 			}}>
 			{props.children}
 		</Context.Provider>
